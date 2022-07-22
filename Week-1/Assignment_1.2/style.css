@@ -44,3 +44,81 @@ nav{
     display: flex;
     flex-direction:column;
 }
+
+table{
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.catty-sync{
+    border: 1px solid black;
+    width: auto;
+    color: rgb(40, 40, 200);
+    font-weight: 700;
+    width: fit-content;
+    padding: 1px;
+}
+
+.songs-row{
+    line-height: 25px;
+}
+
+.song-row-dark{
+    background-color: rgb(230, 230, 230);
+}
+.sidenav-icons {
+    margin: auto;
+    align-self: center;
+}
+td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.bottom-container{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    background-color: rgb(39, 93, 155);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.album-list-title{
+    padding-left: 10px;
+}
+.control-head{
+    margin: 0px 4px 0px 7px;
+}
+.bottom-logo{
+    width: 60px;
+    margin-left: 10%;
+}
+.player-left{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+}
+.playing{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 20px;
+}
+.player-right{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-around;
+}
