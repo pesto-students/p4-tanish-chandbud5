@@ -1,0 +1,31 @@
+.box-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: max-content;
+    margin: 0 auto;
+}
+.box{
+    width: 10vh;
+    height: 10vh;
+}
+.upper, .lower{
+    display: flex;
+    flex-direction: row;
+}
+.box1{
+    background-color: red;
+}
+.box2{
+    background-color: yellow;
+}
+.box3{
+    background-color: blue;
+}
+.box4{
+    background-color: green;
+}
+
+.box1:hover{
+
+}
