@@ -9,16 +9,48 @@
 </head>
 <body>
     <div class="main-container">
+        <header><h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, dolore</h1></header>
         <div class="top-section">
-            <div class="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ut beatae eum magni autem! Atque, quia corrupti beatae odit unde soluta quis ratione expedita voluptatem cum ea, ex id officia.</div>
-            <div class="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum eligendi harum explicabo mollitia maiores, id laboriosam aspernatur at aliquam vero ullam corporis magni sint sit enim nulla consequuntur, quam dicta?</div>
-            <div class="blog blog-image"></div>
-            <div class="blog">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ullam deleniti molestiae fugit, similique quia ex nesciunt recusandae accusantium maxime, blanditiis possimus quam. Nisi, vero iusto exercitationem deleniti optio possimus.</div>
-            <div class="blog">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod ipsum id eum perspiciatis modi vel tempora voluptate animi pariatur amet delectus at, beatae eligendi adipisci. Atque totam animi tempora.</div>
+            <article class="blog">
+                <p class="blog-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt delectus sunt, atque voluptatem eligendi distinctio eaque maiores officia doloremque ullam assumenda, ducimus id hic ratione! Laudantium, minus veritatis! Maxime, velit?</p>
+            </article>
+            <article class="blog blog-with-image">
+                <img src="https://dummyimage.com/420x240/cccccc/0095ff">
+            </article>
+            <article class="blog">
+                <h3 class="blog-heading">Lorem ipsum dolor sit amet.</h3>
+                <p class="blog-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum eligendi harum explicabo mollitia maiores, id laboriosam aspernatur at aliquam vero ullam corporis magni sint sit enim nulla consequuntur, quam dicta?</p>
+            </article>
+            <article class="blog">
+                <h3 class="blog-heading">Lorem ipsum dolor, sit amet consectetur adipisicing.</h3>
+                <p class="blog-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ullam deleniti molestiae fugit, similique quia ex nesciunt recusandae accusantium maxime, blanditiis possimus quam. Nisi, vero iusto exercitationem deleniti optio possimus.</p>
+            </article>
+            <article class="blog">
+                <h3 class="blog-heading">Lorem ipsum dolor sit.</h3>
+                <p class="blog-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod ipsum id eum perspiciatis modi vel tempora voluptate animi pariatur amet delectus at, beatae eligendi adipisci. Atque totam animi tempora.</p>
+            </article>
         </div>
         <div class="form">
             <form>
-                <label>Name <input type="text"></label>
+                <span>Title 
+                    <label><input type="radio" name="title">Mr</label>
+                    <label><input type="radio" name="title">Mrs</label>
+                    <label><input type="radio" name="title">Miss</label>
+                </span>
+                <label>First Name <input type="text"></label>
+                <label>Last Name <input type="text"></label>
+                <label>Email <input type="email"></label>
+                <label>Phone Number <input type="tel"></label>
+                <label>Password <input type="password"></label>
+                <label>Confirm Password <input type="password"></label>
+                <label>Country
+                    <select>
+                        <option>India</option>
+                        <option>Canada</option>
+                        <option>USA</option>
+                    </select>
+                </label>
+                <label><input type="checkbox"> I agree to the <a>Terms and Conditions</a></label>
             </form>
         </div>
     </div>

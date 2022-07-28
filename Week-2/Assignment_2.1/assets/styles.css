@@ -1,15 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: 'Roboto', 'sans-serif';
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header{
+    margin: 0 auto;
+    text-align: center;
+    padding: 0vw 5vw 0vw 5vw;
+}
 .top-section{
     background-color: black;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 10px;
-    column-gap: 10px;
+    row-gap: 5vh;
+    column-gap: 5vw;
 }
 .blog{
     background-color: blanchedalmond;
+    margin: auto;
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
 }
-.blog-image{
+.blog-with-image{
     grid-row-start: 2;
     grid-row-end: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blog-with-image > img{
+    height: 100%;
+    width: 100%;
+}
+form{
+    margin-top: 50px;
+}
+form > label{
+    display: block;
+    margin: 0.6rem 0px 0.6rem 0px;
+}
+select{
+    font-size: 16px;
+    padding: 0.1em;
+}
+/* Link Styling */
+a{
+    text-decoration: underline;
+    color: blue;
+    cursor:pointer;
 }
