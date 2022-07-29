@@ -1,9 +1,11 @@
+/* Set up 4 boxes with different colour and parent container */
 .box-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     width: max-content;
     margin: 0 auto;
+    position: relative;
 }
 .box{
     width: 10vh;
@@ -25,7 +27,30 @@
 .box4{
     background-color: green;
 }
-
-.box1:hover{
-
+/* Transforming boxes in different direction */
+.box1, .box2, .box3, .box4{
+    transition-property: transform;
+    transition-duration: 1.5s;
+}
+.box-container:hover .box1{
+    transform: rotateZ(90deg) translateY(10vh);
+}
+.box-container:hover .box2{
+    transform: translateX(10vh) rotateZ(-90deg);
+}
+.box-container:hover .box3{
+    transform: rotateZ(-90deg) translateY(-10vh);
+}
+.box-container:hover .box4{
+    transform: translateX(10vh) rotateZ(90deg);
+}
+/* The text under boxes */
+.text{
+    font-size: 1.25rem;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
