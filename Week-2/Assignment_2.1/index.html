@@ -33,16 +33,16 @@
         <div class="form">
             <form>
                 <span>Title 
-                    <label><input type="radio" name="title">Mr</label>
-                    <label><input type="radio" name="title">Mrs</label>
-                    <label><input type="radio" name="title">Miss</label>
+                    <label><input class="no-shadow" type="radio" name="title" checked>Mr</label>
+                    <label><input class="no-shadow" type="radio" name="title">Mrs</label>
+                    <label><input class="no-shadow" type="radio" name="title">Miss</label>
                 </span>
-                <label>First Name <input type="text"></label>
-                <label>Last Name <input type="text"></label>
-                <label>Email <input type="email"></label>
-                <label>Phone Number <input type="tel"></label>
-                <label>Password <input type="password"></label>
-                <label>Confirm Password <input type="password"></label>
+                <label>First Name <input type="text" minlength="2" required></label>
+                <label>Last Name <input type="text" required></label>
+                <label>Email <input type="email" required></label>
+                <label>Phone Number <input minlength="10" maxlength="13" type="tel" required></label>
+                <label>Password <input minlength="8" type="password" required></label>
+                <label>Confirm Password <input type="password" required></label>
                 <label>Country
                     <select>
                         <option>India</option>
@@ -50,9 +50,11 @@
                         <option>USA</option>
                     </select>
                 </label>
-                <label><input type="checkbox"> I agree to the <a>Terms and Conditions</a></label>
+                <label><input class="no-shadow" type="checkbox" required> I agree to the <a>Terms and Conditions</a></label>
+                <input type="submit" value="Sign Up">
             </form>
         </div>
     </div>
+    <footer>Assignment 2.2 @ Pesto Tech</footer>
 </body>
 </html>
