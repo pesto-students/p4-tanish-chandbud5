@@ -1,4 +1,5 @@
-/* Set up 4 boxes with different colour and parent container */
+/* Parent container of all 4 boxes
+    Align it to center and display Hi under it */
 .box-container{
     display: flex;
     flex-direction: row;
@@ -7,42 +8,43 @@
     margin: 0 auto;
     position: relative;
 }
+/* individual box size and transition */
 .box{
     width: 10vh;
     height: 10vh;
-}
-.upper, .lower{
-    display: flex;
-    flex-direction: row;
-}
-.box1{
-    background-color: red;
-}
-.box2{
-    background-color: yellow;
-}
-.box3{
-    background-color: blue;
-}
-.box4{
-    background-color: green;
-}
-/* Transforming boxes in different direction */
-.box1, .box2, .box3, .box4{
     transition-property: transform;
     transition-duration: 1.5s;
 }
-.box-container:hover .box1{
+.box-row{
+    display: flex;
+    flex-direction: row;
+}
+/* Set up 4 boxes with different colour */
+.box-red{
+    background-color: red;
+}
+.box-yellow{
+    background-color: yellow;
+}
+.box-blue{
+    background-color: blue;
+}
+.box-green{
+    background-color: green;
+}
+/* Transforming boxes in different direction. 
+Rotation and moving to different position */
+.box-container:hover .box-red{
     transform: rotateZ(90deg) translateY(10vh);
 }
-.box-container:hover .box2{
-    transform: translateX(10vh) rotateZ(-90deg);
+.box-container:hover .box-yellow{
+    transform: rotateZ(-90deg) translateY(10vh);
 }
-.box-container:hover .box3{
+.box-container:hover .box-blue{
     transform: rotateZ(-90deg) translateY(-10vh);
 }
-.box-container:hover .box4{
-    transform: translateX(10vh) rotateZ(90deg);
+.box-container:hover .box-green{
+    transform: rotateZ(90deg) translateY(-10vh);
 }
 /* The text under boxes */
 .text{
