@@ -4,6 +4,7 @@ function add(a, b){
     return a+b;
 }
 
+// High complexity function to calculate nth tribonacci
 function tribonacci(a){
     if(a == 0)
         return 0;
@@ -13,6 +14,7 @@ function tribonacci(a){
         return tribonacci(a-1) + tribonacci(a-2) + tribonacci(a-3);
 }
 
+// Calculates factorial of a number
 function facto(a){
     if(a <= 2)
         return a;
@@ -20,6 +22,9 @@ function facto(a){
         return a*facto(a-1);
 }
 
+// Memoization - Create a map check if input key exist or not
+// If exist then retrun the same value from cache
+// Else compute the value using function and add it to cache
 function memoize(func){
     const cache = new Map();
     return function(...args){
@@ -44,15 +49,11 @@ let tribonacciMemo = memoize(tribonacci);
 let factoMemo = memoize(facto);
 let addMemo = memoize(add);
 
-console.log("Memoizing Add....");
 timeTaken(() => addMemo(35000, 4005));
 timeTaken(() => addMemo(35000, 4005));
 
-
-console.log("Memoizing Tribonacci....");
 timeTaken(() => tribonacciMemo(25));
 timeTaken(() => tribonacciMemo(25));
 
-console.log("Memoizing factorial....");
 timeTaken(() => factoMemo(60));
 timeTaken(() => factoMemo(60));
