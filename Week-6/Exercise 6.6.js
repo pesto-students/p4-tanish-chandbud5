@@ -42,5 +42,8 @@ function Sum3_Closest(nums, target) {
 console.log(Sum3_Closest([-1, 2, 1, 4], 1));
 console.log(Sum3_Closest([4,0,5,-5,3,3,0,-4,-5],-2));
 
+// Output -  2
+//          -2
+
 // Time Complexity - O(N^2) where N is length of input array
 // Space complexity - O(1)

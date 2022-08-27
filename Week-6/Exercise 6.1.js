@@ -16,3 +16,7 @@ function max_sum_subarray(arr) {
 }
 
 console.log(max_sum_subarray(a));
+
+// Output - 6
+// Time complexity - O(N) - where N is number of elements
+// Space Complexity - O(1)

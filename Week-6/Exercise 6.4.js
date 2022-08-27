@@ -12,3 +12,8 @@ function max_profit(prices) {
 
 let prices = [7,1,5,3,6,4];
 console.log(max_profit(prices));
+
+// Output - 5
+
+// Time Complexity - O(N)
+// Space complexity - O(1)

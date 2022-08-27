@@ -24,4 +24,15 @@ function sort_012(input) {
 }
 
 console.log(sort_012(input));
+console.log(sort_012([0, 2, 1, 2, 0]));
+console.log(sort_012([0, 1, 0]));
+
+
+// Output - 
+// [ 0, 0, 0, 1, 1, 2 ]
+// [ 0, 0, 1, 2, 2 ]
+// [ 0, 0, 1 ]
+
+// Time complexity - O(N) - where N is number of elements 
+// Space Complexity - O(1)
 
