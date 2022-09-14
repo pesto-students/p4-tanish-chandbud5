@@ -25,6 +25,21 @@ class Graph{
             this.adj_matrix[u][v] = 1;
         }
     }
+    dfs(source, visited, path){
+        let aux = [];
+        visited.add(source);
+        path.push(source)
+        for(let i=0; i<this.adj_matrix.length; i++){
+            if(!visited.has(i) && this.adj_matrix[source][i] == 1){
+                aux.push(i);
+            }
+        }
+        console.log(path);
+        while(aux.length !=0 ){
+            this.dfs(aux[aux.length-1], visited, path);
+            aux.pop();
+        }
+    }
 }
 
 export {Graph}
