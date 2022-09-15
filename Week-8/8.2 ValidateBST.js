@@ -37,3 +37,10 @@ function isValidBST(root){
 console.log(isValidBST(sampleBST.root));
 sampleBST.root.right.data = -1;
 console.log(isValidBST(sampleBST.root));
+
+// Output - 
+// true
+// false
+ 
+// Time Complexity - O(n)
+// Space complexity - O(1)

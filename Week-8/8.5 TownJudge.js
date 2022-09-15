@@ -25,3 +25,11 @@ let trust3 = [[1,2]];
 console.log(townJudge(trust1, 3));
 console.log(townJudge(trust2, 4));
 console.log(townJudge(trust3, 2));
+
+// Output - 
+// 3
+// -1
+// 2
+
+// Time complexity - O(n)
+// Space Complexity - O(n) -- calculate and store degree

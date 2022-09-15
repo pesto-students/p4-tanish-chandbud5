@@ -31,3 +31,7 @@ function isPath(adj_matrix, u, v, visited){
 
 let visited = [false, false, false, false, false, false,]
 console.log(isPath(sampleGraph.adj_matrix, 5, 1, visited));
+
+// Output - false 
+// Time Complexity - O(n^2)
+// Space complexity - O(n)

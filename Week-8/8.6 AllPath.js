@@ -1,39 +1,28 @@
-import { Graph } from "./Graph.js";
-
 let graph = [[1,2],[3],[3],[]] 
 
-// function createAdj(graph){
-//     let size = graph.length;
-//     let g = new Graph(size);
-//     let adj_matrix = g.adj_matrix;
-//     for(let i=0; i<size; i++){
-//         for(let j=0; j<graph[i].length; j++){
-//             adj_matrix[i][graph[i][j]] = 1;
-//         }
-//     }
-//     return adj_matrix;
-// }
-// let adj_matrix = createAdj(graph);
-
 var allPathsSourceTarget = function(adj_matrix) {
+    // destination node
     const target = graph.length - 1;
-    
-    const res = [];
-    
+    // all possible paths
+    const ans = [];
     const DFS = (node,path) => {
-        
         path.push(node);
+        // if we reached target push that path to ans
         if(node === target) { 
-            res.push(path);
+            ans.push(path);
             return;
         }
+        // take all nodes from graph[node] and run dfs from there
         for(let edge of graph[node]) {
             DFS(edge,[...path]);
         }
     }
     DFS(0,[]);
-    return res;
+    return ans;
 };
 
-// console.log(adj_matrix);
 console.log(allPathsSourceTarget(graph))
+
+// Output - [ [ 0, 1, 3 ], [ 0, 2, 3 ] ]
+// Time complexity - O(n^2)
+// Space Complexity - O(n) -- space used by stack in recurision otherwise O(1)

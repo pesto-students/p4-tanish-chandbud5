@@ -33,3 +33,7 @@ function levelOrder(root){
 }
 
 levelOrder(sampleBST.root);
+
+// Output - 5 2 8 1 3 12 20
+// Time Complexity - O(n)
+// Space Complexity - O(n) -- queue used

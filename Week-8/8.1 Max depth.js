@@ -21,3 +21,7 @@ function maxDepth(root){
 }
 
 console.log(maxDepth(sampleBST.root));
+
+// Output - 3 
+// Time Complexity - O(n)
+// Space complexity - O(1)
