@@ -1,9 +1,10 @@
 .navbar{
+    padding: 10vh 10vw 0px 10vw;
     display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.new-task{
-    
+.logo{
+    height: 4rem;
 }

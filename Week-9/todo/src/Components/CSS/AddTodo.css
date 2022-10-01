@@ -1,0 +1,67 @@
+.todo{
+    padding-top: 8vh;
+}
+
+.input-form{
+    font-size: 18px;
+    margin-bottom: 15vh;
+}
+
+.text-input{
+    padding: 8px 12px;
+    width: 30vw;
+    font-size: 1.125em;
+}
+
+.submit{
+    padding: 8px 12px;
+    background-color: #195abd;
+    border: 0;
+    color: white;
+    font-size: 1.125em;
+}
+
+.submit:hover{
+    background-color: #2596be;
+    color: white;
+}
+
+.action{
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor:pointer;
+}
+
+.action > img{
+    height: 8vh;
+}
+
+table {
+    border-collapse: collapse;
+    width: 75vw;
+    margin: 0 auto; 
+    text-align: center;
+    font-size: 1.1em;
+}
+tr{
+    border: 1px solid #777;
+}
+
+th{
+    width: 20%;
+    padding: 0.75em;
+    font-size: 1.125em;
+}
+
+.taskTitle{
+    width: 60%;
+}
+
+td{
+    padding: 0.75em;
+    font-size: 1.1em;
+}
+
+.strike{
+    text-decoration: line-through;
+}
