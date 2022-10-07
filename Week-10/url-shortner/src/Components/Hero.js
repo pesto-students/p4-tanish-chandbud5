@@ -1,6 +1,7 @@
 import React from 'react'
 import '../CSS/hero.css'
 
+// Hero component for UI
 function Hero() {
   return (
     <>

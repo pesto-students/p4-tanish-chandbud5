@@ -1,10 +1,14 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import '../CSS/shortner.css'
 import axios from "axios";
 
+// Loader
 const loaderAnimation = 'https://assets.materialup.com/uploads/b68f4460-aaa9-4e19-99d8-232dfea1c537/preview.gif'
 
-
+// To shorten URL using an API
+// link will store current value in input field
+// loader will help us decide whether to show loader animation or not
+// shortendURL will be the result we get returned from API
 function Shortner() {
     const [link, setLink] = useState('');
     const [loader, setLoader] = useState(false)
@@ -14,6 +18,7 @@ function Shortner() {
         setLink(temp);
     };
 
+    // Calling API on clicking shorten button
     const onClickShortner = function () {
         console.log("Clicked")
         setLoader(true)
@@ -32,6 +37,8 @@ function Shortner() {
             console.log(link, shortendURL)
         });
     };
+
+    // if loader is true then display loader animation
     const Load = function (props){
         console.log(props.loader)
         if(props.loader){
@@ -41,6 +48,8 @@ function Shortner() {
             return ;
         }
     }
+
+    // Display will render the response we got from API
     const Display = function (props){
         console.log(props.link)
         if(props.link !== ''){
@@ -52,6 +61,7 @@ function Shortner() {
                 </div>)
         }
     }
+    
     return (
     <div className='shortner'>
         <div className='urlInput'>
