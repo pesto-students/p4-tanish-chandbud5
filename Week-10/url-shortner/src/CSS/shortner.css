@@ -1,0 +1,54 @@
+input{
+    width: 45vw;
+    padding: 1em;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+.urlInput button{
+    background-color: #2596be;
+    color: white;
+    padding: 1em;
+    width: 12vw;
+    border: none;
+    margin-left: 3vw;
+    border-radius: 5px;
+}
+
+.urlOutput{
+    margin: 0 auto;
+}
+
+.loader{
+    width: 10vw;
+}
+
+.originalLink{
+    overflow-wrap: break-word;
+    width: 45vw;
+}
+
+.shortendLink{
+    overflow-wrap: break-word;
+    width: max-content;
+    text-align: center;
+}
+
+.copy{
+    background: #fff;
+    color: #2596be;
+    border: 1px solid #2596be;
+    border-radius: 5px;
+    margin-top: 2vh;
+    cursor: pointer;
+}
+
+.copy:hover{
+    background-color: #ddd;
+}
+
+@media screen and (max-width: 768px) {
+    .urlInput button, .copy{
+        width: max-content;
+    }
+}
