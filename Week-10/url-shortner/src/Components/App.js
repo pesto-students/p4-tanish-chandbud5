@@ -1,6 +1,7 @@
 import '../CSS/App.css';
 import Hero from './Hero';
 import Navbar from './Navbar';
+import Shortner from './Shortner';
 
 // App to be rendered
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Hero />
+      <Shortner />
     </div>
   );
 }
