@@ -1,7 +1,7 @@
-import '../CSS/App.css';
-import Hero from './Hero';
-import Navbar from './Navbar';
-import Shortner from './Shortner';
+import './App.css';
+import Hero from './Components/Hero';
+import Navbar from './Components/Navbar';
+import Shortner from './Components/Shortner';
 
 // App to be rendered
 function App() {
