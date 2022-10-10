@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import DisplayTodo from './displayTodo';
-import './CSS/AddTodo.css';
+import '../CSS/AddTodo.css';
 
 export default function TaskManager(){
     // task to be added
