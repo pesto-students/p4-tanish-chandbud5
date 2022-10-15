@@ -1,10 +1,12 @@
 .ON{
     background-color: white;
+    padding-top: 3vh;
 }
 
 .OFF{
     background-color: black;
-    color: white
+    color: white;
+    padding-top: 3vh;
 }
 
 button{
