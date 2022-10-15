@@ -1,10 +1,12 @@
 import { MODE } from "./action"
 
+// defining initial state
 export const initialState = {
     lights: false,
     text: "OFF"
 }
 
+// toggle the current state
 export const toggleReducer = (state = initialState, action) => {
     switch(action.type){
         case MODE:
