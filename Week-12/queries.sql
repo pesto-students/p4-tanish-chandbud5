@@ -1,0 +1,32 @@
+-- insert some values 
+INSERT INTO CITIES VALUES ('Pune', 'Maharashtra');
+INSERT INTO CITIES VALUES ('Vadodara', 'Gujarat');
+INSERT INTO ITEMS VALUES (1, "KEYBOARD", 250.00, 500.00);
+INSERT INTO ITEMS VALUES (2, "MOUSE", 100.00, 300.00);
+INSERT INTO WAREHOUSES VALUES (1, "WEST WAREHOUSE", "Highway", 'Pune');
+INSERT INTO WAREHOUSES VALUES (2, "Amazon warehouse", "Cross road", 'Vadodara');
+INSERT INTO WAREHOUSES VALUES (3, "Flipkart warehouse", "City center", 'Pune');
+INSERT INTO CUSTOMER VALUES(1, "Patil", "Opp City Hospital, India", 'Pune');
+INSERT INTO CUSTOMER VALUES(2, "Patel", "Near Railway Station, India", 'Vadodara');
+INSERT INTO CUSTOMER VALUES(3, "Shrivastav", "Twin towers, India", 'Pune');
+INSERT INTO ORDERINFO VALUES(1,  1, '2022-10-05');
+INSERT INTO ORDERINFO VALUES(2,  1, '2022-10-05');
+INSERT INTO ORDERINFO VALUES(3,  2, '2022-10-05');
+INSERT INTO ITEMS_ORDERED VALUES(1, "KEYBOARD", 1, 5);
+INSERT INTO ITEMS_ORDERED VALUES(2, "MOUSE", 1, 5);
+INSERT INTO ITEMS_ORDERED VALUES(1, "KEYBOARD", 2, 10);
+INSERT INTO ITEMS_ORDERED VALUES(2, "MOUSE", 3, 15);
+INSERT INTO STORES VALUES(1, "D-Mart", "Pune", 1);
+INSERT INTO STORES VALUES(2, "Jio-Mart", "Vadodara", 2);
+INSERT INTO STORES VALUES(3, "D-Mart", "Vadodara", 1);
+INSERT INTO STORE_ITEMS VALUES (1, 1, 50);
+INSERT INTO STORE_ITEMS VALUES (2, 1, 100);
+INSERT INTO STORE_ITEMS VALUES (1, 2, 125);
+
+-- fetch some values
+SELECT * FROM ITEMS WHERE weight=(SELECT min(weight) from ITEMS);
+SELECT * FROM WAREHOUSES WHERE city="Pune";
+SELECT * FROM ITEMS_ORDERED having orderno IN (SELECT ono from ORDERINFO where ordered_by IN (SELECT cno FROM CUSTOMER WHERE cname = 'Patil'));
+SELECT name, max(c) from (SELECT WAREHOUSES.wname as name, count(STORES.warehouse) as c from STORES LEFT JOIN WAREHOUSES ON STORES.warehouse = WAREHOUSES.wid group by STORES.warehouse having count(*)) as store_count;
+SELECT itemName, min(q) from (SELECT itemname, SUM(quantity) as q from ITEMS_ORDERED GROUP BY itemno) as derived_table;
+SELECT * FROM ITEMS_ORDERED INNER JOIN ORDERINFO ON ITEMS_ORDERED.orderno = ORDERINFO.ono INNER JOIN CUSTOMER on ORDERINFO.ordered_by = CUSTOMER.cno;
