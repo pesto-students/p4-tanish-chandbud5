@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Home | StockWallet
+    body 
+        h1 StockWallet 
+        h2 Welcome #{user.name}
+        table
+            tr 
+                td Stock name 
+                td Value
+            for d in data
+                tr 
+                    td #{d.stock}
+                    td #{d.value}
+                    td 
+                        a(href=`delete/${d._id}`) Sell
+                    td 
+                        a(href=`update/${d._id}`) Modify
+
+
+        form(action="/stock/add", method="post")
+            p Stock 
+            input(type="text", name="stock")
+            p Value
+            input(type="number", name="value") 
+            input(type="submit", value="Buy")
+            select(name="type")
+                option(value="Fixed Income" name="fixed-income") Fixed Income
+                option(value="Equity" name="equity") Equity
+                option(value="Bonus" name="Bonus") Bonus
+            input(type="date", name="date")
+            
