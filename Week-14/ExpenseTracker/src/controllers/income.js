@@ -1,6 +1,6 @@
 // connecting to database
 const { ObjectId, MongoClient } = require('mongodb');
-const uri = "mongodb+srv://chand:1234@nodetutorial.adgaqkr.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI
 const client = new MongoClient(uri, { useUnifiedTopology: true });
 (async () => {
     await client.connect();

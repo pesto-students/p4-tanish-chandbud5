@@ -10,6 +10,7 @@
   "author": "chand",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mongodb": "^4.11.0",
