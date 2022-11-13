@@ -9,8 +9,8 @@ const client = new MongoClient(uri, { useUnifiedTopology: true });
 
 async function viewAll() {
     try{
-        const db = client.db("NodeTuts");
-        const collection = db.collection("Stocks");
+        const db = client.db("Pesto");
+        const collection = db.collection("Income");
         const query = { email: "chandbud5@gmail.com"};
         const result = await collection.find(query).toArray();
         return result;
@@ -20,11 +20,11 @@ async function viewAll() {
     }
 }
 
-async function add(stock, value, owner) {
+async function add(type, amount, date, owner) {
     try{
-        const db = client.db("NodeTuts");
-        const collection = db.collection("Stocks");
-        const query = { email: owner, stock: stock, value: value};
+        const db = client.db("Pesto");
+        const collection = db.collection("Income");
+        const query = { email: owner, type: type, value: amount, date: date};
         const result = await collection.insertOne(query);
         return result;
     }
@@ -33,10 +33,10 @@ async function add(stock, value, owner) {
     }
 }
 
-async function deleteStock(id){
+async function deleteincome(id){
     try{
-        const db = client.db("NodeTuts");
-        const collection = db.collection("Stocks");
+        const db = client.db("Pesto");
+        const collection = db.collection("Income");
         const query = { _id: ObjectId(id)};
         const result = await collection.deleteOne(query);
         return result;
@@ -46,12 +46,12 @@ async function deleteStock(id){
     }
 }
 
-async function updateStock(id, stock, value){
+async function updateincome(id, type, amount, date){
     try{
-        const db = client.db("NodeTuts");
-        const collection = db.collection("Stocks");
+        const db = client.db("Pesto");
+        const collection = db.collection("Income");
         const query = { _id: ObjectId(id)};
-        const result = await collection.updateOne(query, {$set:{stock: stock, value: value}});
+        const result = await collection.updateOne(query, {$set:{ type: type, value: amount, date: date}});
         return result;
     }
     catch(error){
@@ -61,8 +61,8 @@ async function updateStock(id, stock, value){
 
 async function getOne(id){
     try{
-        const db = client.db("NodeTuts");
-        const collection = db.collection("Stocks");
+        const db = client.db("Pesto");
+        const collection = db.collection("Income");
         const query = { _id: ObjectId(id)};
         const result = await collection.findOne(query);
         return result;
@@ -72,4 +72,17 @@ async function getOne(id){
     }
 }
 
-module.exports = {add, viewAll, deleteStock, updateStock, getOne}
+async function filterByDate(from, to){
+    try{
+        const db = client.db("Pesto");
+        const collection = db.collection("Income");
+        const query = { date: {$gte:from, $lte:to}};
+        const result = await collection.find(query).toArray();
+        return result;
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+module.exports = {add, viewAll, deleteincome, updateincome, getOne, filterByDate}

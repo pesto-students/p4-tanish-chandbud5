@@ -1,5 +1,5 @@
 const express = require('express');
-const { add, viewAll, deleteStock, getOne, updateStock } = require('../controllers/income');
+const { add, viewAll, deleteincome, getOne, updateincome, filterByDate } = require('../controllers/income');
 
 app = express.Router();
 app.use(express.urlencoded({
@@ -12,35 +12,40 @@ app.get('/home', async (req, res) => {
 });
 
 app.post('/add', async (req, res) => {
-    const stock = req.body.stock;
-    const value = req.body.value;
+    const type = req.body.type;
+    const amount = req.body.amount;
+    const date = req.body.date;
     let email = "chandbud5@gmail.com"
-    let result = await add(stock, value, email);
-    console.log(result);
-    res.redirect('/stock/home');
+    let result = await add(type, amount, date, email);
+    res.redirect('/income/home');
 })
 
 app.get('/delete/:id', async (req, res) => {
     let object_id = req.params.id;
-    let data = await deleteStock(object_id);
-    console.log(data);
-    res.redirect('/stock/home')
+    let data = await deleteincome(object_id);
+    res.redirect('/income/home')
 })
 
 app.get('/update/:id', async (req, res) => {
     let object_id = req.params.id;
     let data = await getOne(object_id);
-    console.log(data);
-    res.render("updateStock", {object: data});
+    res.render("update", {object: data});
 })
 
 app.post('/update/:id', async(req, res) => {
     let object_id = req.params.id;
-    const stock = req.body.stock;
-    const value = req.body.value;
-    let data = await updateStock(object_id, stock, value);
-    console.log(data);
-    res.redirect('/stock/home')
+    const type = req.body.type;
+    const amount = req.body.amount;
+    const date = req.body.date;
+    let data = await updateincome(object_id, type, amount, date);
+    res.redirect('/income/home')
+})
+
+app.post('/filter', async(req, res) => {
+    let from = req.body.from;
+    let to = req.body.to;
+    let results = await filterByDate(from, to);
+    res.render("filter", {data: results, from : from, to: to});
 })
 
 module.exports = app;

@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        h2 #{object.type} worth #{object.value}
+        form(action=`${object._id}`, method="post") 
+            p Amount
+            input(required type="number", name="amount" value=`${object.value}`) 
+            p
+            select(required name="type")
+                option(disabled selected) ----
+                option(value="Fixed Income" name="fixed-income") Fixed Income
+                option(value="Equity" name="equity") Equity
+                option(value="Bonus" name="Bonus") Bonus
+            p
+            input(required type="date", name="date" value=`${object.date}`)
+            p
+            input(required type="submit", value="Update")
+            

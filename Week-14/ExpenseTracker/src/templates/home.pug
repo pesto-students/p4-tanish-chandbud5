@@ -4,33 +4,46 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Home | StockWallet
+        title Home | Asset Manager
     body 
-        h1 StockWallet 
+        h1 Asset and Expense manager 
         h2 Welcome #{user.name}
-        table
+        table(border=1)
             tr 
-                td Stock name 
-                td Value
+                td Amount 
+                td Type of Asset
+                td Created at
+                td Remove 
+                td Modify
             for d in data
                 tr 
-                    td #{d.stock}
                     td #{d.value}
-                    td 
-                        a(href=`delete/${d._id}`) Sell
+                    td #{d.type}
+                    td #{d.date}
+                    td
+                        a(href=`delete/${d._id}`) Delete
                     td 
                         a(href=`update/${d._id}`) Modify
 
 
-        form(action="/stock/add", method="post")
-            p Stock 
-            input(type="text", name="stock")
-            p Value
-            input(type="number", name="value") 
-            input(type="submit", value="Buy")
-            select(name="type")
+        form(action="/income/add", method="post")
+            p Amount
+            input(required type="number", name="amount") 
+            p
+            select(required name="type")
                 option(value="Fixed Income" name="fixed-income") Fixed Income
                 option(value="Equity" name="equity") Equity
                 option(value="Bonus" name="Bonus") Bonus
-            input(type="date", name="date")
-            
+            p
+            input(required type="date", name="date")
+            p
+            input(type="submit", value="Add")
+
+        b Filter assets by date
+        form(action="/income/filter", method="post") 
+            label(for="from") From
+            input#from(type="date", name="from")
+            br
+            label(for="to") To
+            input#to(type="date", name="to")
+            input(type="submit") 
