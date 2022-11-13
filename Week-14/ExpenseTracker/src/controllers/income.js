@@ -1,5 +1,5 @@
+// connecting to database
 const { ObjectId, MongoClient } = require('mongodb');
-
 const uri = "mongodb+srv://chand:1234@nodetutorial.adgaqkr.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useUnifiedTopology: true });
 (async () => {
@@ -7,11 +7,12 @@ const client = new MongoClient(uri, { useUnifiedTopology: true });
     console.log("connected to DB");
 })()
 
-async function viewAll() {
+// return all income records for user
+async function viewAll(email) {
     try{
         const db = client.db("Pesto");
         const collection = db.collection("Income");
-        const query = { email: "chandbud5@gmail.com"};
+        const query = { email: email};
         const result = await collection.find(query).toArray();
         return result;
     }
@@ -20,6 +21,7 @@ async function viewAll() {
     }
 }
 
+// add income record
 async function add(type, amount, date, owner) {
     try{
         const db = client.db("Pesto");
@@ -33,6 +35,7 @@ async function add(type, amount, date, owner) {
     }
 }
 
+// delete income record
 async function deleteincome(id){
     try{
         const db = client.db("Pesto");
@@ -46,6 +49,7 @@ async function deleteincome(id){
     }
 }
 
+// update income record
 async function updateincome(id, type, amount, date){
     try{
         const db = client.db("Pesto");
@@ -59,6 +63,7 @@ async function updateincome(id, type, amount, date){
     }
 }
 
+// fetch particular income record using ID
 async function getOne(id){
     try{
         const db = client.db("Pesto");
@@ -72,11 +77,12 @@ async function getOne(id){
     }
 }
 
-async function filterByDate(from, to){
+// Filtering and querying records by date
+async function filterByDate(from, to, owner){
     try{
         const db = client.db("Pesto");
         const collection = db.collection("Income");
-        const query = { date: {$gte:from, $lte:to}};
+        const query = { date: {$gte:from, $lte:to}, email: {$eq: owner}};
         const result = await collection.find(query).toArray();
         return result;
     }

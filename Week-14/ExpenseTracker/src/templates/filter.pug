@@ -6,11 +6,11 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Filtered Results
     body 
-        h3 Showing assets from #{from} to #{to}
+        h3 Showing #{type} from #{from} to #{to}
         table(border=1)
             tr 
                 td Amount 
-                td Type of Asset
+                td Type
                 td Created at
                 td Remove 
                 td Modify
@@ -20,7 +20,7 @@ html(lang="en")
                     td #{d.type}
                     td #{d.date}
                     td
-                        a(href=`/income/delete/${d._id}`) Delete
+                        a(href=`/${type}/delete/${d._id}`) Delete
                     td 
-                        a(href=`/income/update/${d._id}`) Modify
+                        a(href=`/${type}/update/${d._id}`) Modify
 
