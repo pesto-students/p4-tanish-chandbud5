@@ -1,6 +1,5 @@
-const { MongoClient, ObjectId } = require('mongodb');
-const uri = "mongodb+srv://chand:1234@nodetutorial.adgaqkr.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useUnifiedTopology: true });
+const {client} = require('../../index')
+const { ObjectId } = require('mongodb');
 
 async function viewAll() {
     try{
