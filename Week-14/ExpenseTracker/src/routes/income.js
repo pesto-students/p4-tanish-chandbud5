@@ -1,5 +1,5 @@
 const express = require('express');
-const { add, viewAll, deleteStock, getOne, updateStock } = require('../controllers/stocks');
+const { add, viewAll, deleteStock, getOne, updateStock } = require('../controllers/income');
 
 app = express.Router();
 app.use(express.urlencoded({

@@ -1,9 +1,14 @@
-const {client} = require('../../index')
-const { ObjectId } = require('mongodb');
+const { ObjectId, MongoClient } = require('mongodb');
+
+const uri = "mongodb+srv://chand:1234@nodetutorial.adgaqkr.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useUnifiedTopology: true });
+(async () => {
+    await client.connect();
+    console.log("connected to DB");
+})()
 
 async function viewAll() {
     try{
-        await client.connect();
         const db = client.db("NodeTuts");
         const collection = db.collection("Stocks");
         const query = { email: "chandbud5@gmail.com"};
@@ -13,14 +18,10 @@ async function viewAll() {
     catch(error){
         console.log(error);
     }
-    finally{
-        await client.close();
-    }
 }
 
 async function add(stock, value, owner) {
     try{
-        await client.connect();
         const db = client.db("NodeTuts");
         const collection = db.collection("Stocks");
         const query = { email: owner, stock: stock, value: value};
@@ -30,14 +31,10 @@ async function add(stock, value, owner) {
     catch(error){
         console.log(error);
     }
-    finally{
-        await client.close();
-    }
 }
 
 async function deleteStock(id){
     try{
-        await client.connect();
         const db = client.db("NodeTuts");
         const collection = db.collection("Stocks");
         const query = { _id: ObjectId(id)};
@@ -47,14 +44,10 @@ async function deleteStock(id){
     catch(error){
         console.log(error);
     }
-    finally{
-        await client.close();
-    }
 }
 
 async function updateStock(id, stock, value){
     try{
-        await client.connect();
         const db = client.db("NodeTuts");
         const collection = db.collection("Stocks");
         const query = { _id: ObjectId(id)};
@@ -64,14 +57,10 @@ async function updateStock(id, stock, value){
     catch(error){
         console.log(error);
     }
-    finally{
-        await client.close();
-    }
 }
 
 async function getOne(id){
     try{
-        await client.connect();
         const db = client.db("NodeTuts");
         const collection = db.collection("Stocks");
         const query = { _id: ObjectId(id)};
@@ -80,9 +69,6 @@ async function getOne(id){
     }
     catch(error){
         console.log(error);
-    }
-    finally{
-        await client.close();
     }
 }
 

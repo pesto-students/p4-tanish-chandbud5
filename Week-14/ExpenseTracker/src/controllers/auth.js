@@ -1,7 +1,12 @@
 const crypto = require('crypto');
-const { MongoClient } = require('mongodb');
+const { ObjectId, MongoClient } = require('mongodb');
+
 const uri = "mongodb+srv://chand:1234@nodetutorial.adgaqkr.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useUnifiedTopology: true });
+(async () => {
+    await client.connect();
+    console.log("connected to DB");
+})()
 
 function createHash(password){
     const hash =  crypto.pbkdf2Sync(password, "0", 
@@ -12,7 +17,6 @@ function createHash(password){
 async function signin(email, password){
     try{
         passwordHash = createHash(password);
-        await client.connect();
         const db = client.db("NodeTuts");
         const collection = db.collection("Test");
         const query = { email: email};
@@ -30,14 +34,10 @@ async function signin(email, password){
     catch (error) {
         console.log(error);
     }
-    finally {
-        await client.close();
-    }
 }
 
 async function signup(email, password, name){
     try{
-        await client.connect();
         const db = client.db("NodeTuts");
         const collection = db.collection("Test");
         const doc = { email: email, password: createHash(password), name: name };
@@ -46,9 +46,6 @@ async function signup(email, password, name){
     }
     catch (error) {
         console.log(error);
-    }
-    finally {
-        await client.close();
     }
 }
 
