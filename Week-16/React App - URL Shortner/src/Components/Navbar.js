@@ -9,8 +9,8 @@ function Navbar() {
         <div className='nav'>
             <ul className='nav-items'>
                 <li><a href='/'>Home</a></li>
-                <li><a href='/'>About</a></li>
-                <li><a href='/'>Contact</a></li>
+                <li><a href='/error'>About</a></li>
+                <li><a href='/error'>Contact</a></li>
             </ul>
         </div>
     </div>
