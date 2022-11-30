@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import ReactGA from 'react-ga'
 
 ReactGA.initialize('UA-250422090-1')
+ReactGA.pageview(window.location.pathname);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
