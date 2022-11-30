@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import '../CSS/shortner.css'
 import axios from "axios";
+import ReactGA from 'react-ga';
 
 // Loader
 const loaderAnimation = 'https://assets.materialup.com/uploads/b68f4460-aaa9-4e19-99d8-232dfea1c537/preview.gif'
@@ -36,6 +37,12 @@ function Shortner() {
             setLoader(false);
             console.log(link, shortendURL)
         });
+        ReactGA.event({
+            category: "Shortening",
+            action: "Onclick",
+            label: "Shortening",
+            value: `${link} - ${shortendURL}`
+        })
     };
 
     // if loader is true then display loader animation
