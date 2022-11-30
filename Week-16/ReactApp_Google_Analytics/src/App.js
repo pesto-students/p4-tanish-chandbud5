@@ -9,7 +9,7 @@ import {useEffect} from 'react';
 function App() {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
-  })
+  }, [])
   return (
     <div className="App">
       <Navbar />
