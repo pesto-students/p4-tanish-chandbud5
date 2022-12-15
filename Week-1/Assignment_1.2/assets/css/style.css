@@ -1,0 +1,224 @@
+/* Importing Lato font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    font-family: 'Lato', 'sans-serif';
+    margin: 0;
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container{
+    margin-left: 3%;
+}
+/* Top header */
+nav{
+    display: flex;
+    background-color: rgb(100, 100, 100);
+    padding: 25px;
+}
+.logo{
+    height: 9em;
+}
+/* Album details in header */
+.album{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+.album-title{
+    font-size: 26px;
+}
+.artist{
+    margin-top: 10px;
+}
+/* Fixed Side navigation bar */
+.sidenav{
+    position:fixed;
+    height: 90%;
+    width: 3%;
+    background-color: rgb(235, 235, 235);
+    z-index: 1;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction:column;
+}
+/* Playlist table */
+table{
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 10vh;
+}
+
+.catty-sync{
+    border: 1px solid black;
+    width: auto;
+    color: rgb(40, 40, 200);
+    font-weight: 700;
+    width: fit-content;
+    padding: 1px;
+    white-space: nowrap;
+}
+/* playlist table */
+.songs-row{
+    line-height: 25px;
+}
+
+.song-row-dark{
+    background-color: rgb(230, 230, 230);
+}
+.sidenav-icons {
+    margin: auto;
+    align-self: center;
+}
+td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+/* Bottom player */
+.bottom-container{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 11vh;
+    color: white;
+    background-color: rgb(39, 93, 155);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+.album-list-title{
+    padding-left: 10px;
+}
+.control-head{
+    margin: 0px 4px 0px 7px;
+    font-size: 14px;
+    align-items: center;
+}
+.bottom-logo{
+    height: 9vh;
+    margin-left: 1vh;
+}
+.player-left{
+    display: flex;
+    flex-direction: row;
+    width: 35%;
+}
+.playing{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 20px;
+}
+.player-right{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-around;
+}
+/* Reduce fontsize for 782px to 513px screen */
+@media screen and (max-width: 782px) and (min-width: 513px){
+    .sidenav-icons{
+        font-size: 12px;
+    }
+    .album-title{
+        font-size: 20px;
+    }
+    .logo{
+        height: 9em;
+    }
+    .album-list-title{
+        font-size: 16px;
+    }
+    .album-title-singer{
+        font-size: 14px;
+    }
+    .catty-sync{
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    .playing > p{
+        font-size: 14px;
+    }
+}
+/* Changing layout for mobile screen */
+@media screen and (max-width: 512px){
+    .catty-sync{
+        font-size: 10px;
+        margin-left: 10px;
+    }
+    .album{
+        margin: auto;
+        margin-top: 20px;
+    }
+    .logo-container{
+        margin: auto;
+    }
+    .sidenav-icons{
+        font-size: 8px;
+    }
+    .album-title{
+        font-size: 16px;
+    }
+    .logo{
+        height: 10em;
+    }
+    .album-list-title{
+        font-size: 14px;
+    }
+    .album-title-singer{
+        font-size: 12px;
+    }
+    .playing > p{
+        font-size: 12px;
+    }
+    .artist{
+        font-size: 14px;
+    }
+    .stats{
+        font-size: 14px;
+    }
+    .controls{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    .album-duration{
+        font-size: 12px;
+        margin-right: 12px;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+    .player-right{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 452px){
+    .player-left{
+        width: 60%;
+    }
+    .album-list-title{
+        font-size: 12px;
+    }
+    .catty-sync{
+        font-size: 10px;
+    }
+}

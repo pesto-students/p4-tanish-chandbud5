@@ -1,0 +1,58 @@
+/* Parent container of all 4 boxes
+    Align it to center and display Hi under it */
+.box-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: max-content;
+    margin: 0 auto;
+    position: relative;
+}
+/* individual box size and transition */
+.box{
+    width: 10vh;
+    height: 10vh;
+    transition-property: transform;
+    transition-duration: 1.5s;
+}
+.box-row{
+    display: flex;
+    flex-direction: row;
+}
+/* Set up 4 boxes with different colour */
+.box-red{
+    background-color: red;
+}
+.box-yellow{
+    background-color: yellow;
+}
+.box-blue{
+    background-color: blue;
+}
+.box-green{
+    background-color: green;
+}
+/* Transforming boxes in different direction. 
+Rotation and moving to different position */
+.box-container:hover .box-red{
+    transform: rotateZ(90deg) translateY(10vh);
+}
+.box-container:hover .box-yellow{
+    transform: rotateZ(-90deg) translateY(10vh);
+}
+.box-container:hover .box-blue{
+    transform: rotateZ(-90deg) translateY(-10vh);
+}
+.box-container:hover .box-green{
+    transform: rotateZ(90deg) translateY(-10vh);
+}
+/* The text under boxes */
+.text{
+    font-size: 1.25rem;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
