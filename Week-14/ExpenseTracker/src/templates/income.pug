@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Home | Asset Manager
+    body 
+        Button
+            a(href='/signout') Sign out
+        h3 Assets
+        table(border=1)
+            tr 
+                td Amount 
+                td Type of Asset
+                td Created at
+                td Remove 
+                td Modify
+            for d in data
+                tr 
+                    td #{d.value}
+                    td #{d.type}
+                    td #{d.date}
+                    td
+                        a(href=`delete/${d._id}`) Delete
+                    td 
+                        a(href=`update/${d._id}`) Modify
+
+        h3 Add Assets
+        form(action="/income/add", method="post")
+            label(for="amount") Amount
+            input#amount(required type="number", name="amount") 
+            br
+            select(required name="type")
+                option(value="Fixed Income" name="fixed-income") Fixed Income
+                option(value="Equity" name="equity") Equity
+                option(value="Bonus" name="Bonus") Bonus
+            br
+            input(required type="date", name="date")
+            br
+            input(type="submit", value="Add")
+
+        h3 Filter assets by date
+        form(action="/income/filter", method="post") 
+            label(for="from") From
+            input#from(type="date", name="from")
+            br
+            label(for="to") To
+            input#to(type="date", name="to")
+            input(type="submit") 
