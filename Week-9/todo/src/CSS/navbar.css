@@ -1,0 +1,10 @@
+.navbar{
+    padding: 10vh 10vw 0px 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    height: 4rem;
+}
